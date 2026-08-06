@@ -5,8 +5,8 @@ import { setLocale } from "../i18n";
 const { locale } = useI18n();
 
 const options = [
-  { value: "en", label: "EN" },
   { value: "km", label: "ខ្មែរ" },
+  { value: "en", label: "EN" },
 ];
 </script>
 

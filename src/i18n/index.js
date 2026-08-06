@@ -8,7 +8,7 @@ const SUPPORTED_LOCALES = ["en", "km"];
 function detectLocale() {
   const saved = localStorage.getItem(STORAGE_KEY);
   if (SUPPORTED_LOCALES.includes(saved)) return saved;
-  return navigator.language?.toLowerCase().startsWith("km") ? "km" : "en";
+  return "km";
 }
 
 export const i18n = createI18n({
