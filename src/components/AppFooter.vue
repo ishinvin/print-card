@@ -14,21 +14,21 @@ import GitHubIcon from "./icons/GitHubIcon.vue";
     <div class="footer-links">
       <a
         class="sponsor-btn"
-        href="https://github.com/sponsors/ishinvin"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <HeartIcon />
-        {{ $t("footer.sponsor") }}
-      </a>
-      <a
-        class="sponsor-btn"
         href="https://github.com/ishinvin/print-card"
         target="_blank"
         rel="noopener noreferrer"
       >
         <GitHubIcon />
         {{ $t("footer.github") }}
+      </a>
+      <a
+        class="sponsor-btn"
+        href="https://github.com/sponsors/ishinvin"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <HeartIcon />
+        {{ $t("footer.sponsor") }}
       </a>
     </div>
   </footer>
