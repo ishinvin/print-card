@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ishinvin.github.io/print-card/sitemap.xml
