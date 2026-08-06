@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import CloseIcon from "./icons/CloseIcon.vue";
 
 defineProps({
   src: { type: String, default: "" },
@@ -83,14 +84,7 @@ function clear(e) {
         :title="$t('card.clear')"
         @click="clear"
       >
-        <svg viewBox="0 0 16 16" fill="none">
-          <path
-            d="M4 4l8 8m0-8l-8 8"
-            stroke="currentColor"
-            stroke-width="1.6"
-            stroke-linecap="round"
-          />
-        </svg>
+        <CloseIcon />
       </button>
     </div>
 

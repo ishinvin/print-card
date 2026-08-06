@@ -3,6 +3,9 @@ import { inject } from "vue";
 import { useExportImage } from "../composables/useExportImage";
 import SavePreviewModal from "./SavePreviewModal.vue";
 import BaseButton from "./BaseButton.vue";
+import PrintIcon from "./icons/PrintIcon.vue";
+import SaveIcon from "./icons/SaveIcon.vue";
+import ResetIcon from "./icons/ResetIcon.vue";
 
 defineProps({
   compact: { type: Boolean, default: false },
@@ -34,33 +37,7 @@ function resetAll() {
       :aria-label="$t('actions.print')"
       @click="doPrint"
     >
-      <svg viewBox="0 0 16 16" fill="none">
-        <path
-          d="M5 5.5V2.5h6v3"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <rect
-          x="2"
-          y="5.5"
-          width="12"
-          height="5.5"
-          rx="1.5"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
-        <rect
-          x="5"
-          y="8.5"
-          width="6"
-          height="5"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <PrintIcon />
     </button>
 
     <button
@@ -71,15 +48,7 @@ function resetAll() {
       :disabled="generating"
       @click="openPreview"
     >
-      <svg viewBox="0 0 16 16" fill="none">
-        <path
-          d="M8 2v7m0 0 3-3m-3 3L5 6M3 11v1.5A1.5 1.5 0 0 0 4.5 14h7a1.5 1.5 0 0 0 1.5-1.5V11"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <SaveIcon />
     </button>
 
     <button
@@ -89,73 +58,23 @@ function resetAll() {
       :aria-label="$t('actions.reset')"
       @click="resetAll"
     >
-      <svg viewBox="0 0 16 16" fill="none">
-        <path
-          d="M13.5 8a5.5 5.5 0 1 1-1.6-3.89M13.5 2v3.5H10"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <ResetIcon />
     </button>
   </div>
 
   <div v-else class="action-row">
     <BaseButton @click="doPrint">
-      <svg viewBox="0 0 16 16" fill="none">
-        <path
-          d="M5 5.5V2.5h6v3"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <rect
-          x="2"
-          y="5.5"
-          width="12"
-          height="5.5"
-          rx="1.5"
-          stroke="currentColor"
-          stroke-width="1.4"
-        />
-        <rect
-          x="5"
-          y="8.5"
-          width="6"
-          height="5"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <PrintIcon />
       <span>{{ $t("actions.print") }}</span>
     </BaseButton>
 
     <BaseButton :disabled="generating" @click="openPreview">
-      <svg viewBox="0 0 16 16" fill="none">
-        <path
-          d="M8 2v7m0 0 3-3m-3 3L5 6M3 11v1.5A1.5 1.5 0 0 0 4.5 14h7a1.5 1.5 0 0 0 1.5-1.5V11"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <SaveIcon />
       <span>{{ generating ? $t("actions.preparing") : $t("actions.save") }}</span>
     </BaseButton>
 
     <BaseButton @click="resetAll">
-      <svg viewBox="0 0 16 16" fill="none">
-        <path
-          d="M13.5 8a5.5 5.5 0 1 1-1.6-3.89M13.5 2v3.5H10"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      <ResetIcon />
       <span>{{ $t("actions.reset") }}</span>
     </BaseButton>
   </div>

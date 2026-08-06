@@ -6,6 +6,8 @@ import CardSizeSection from "./CardSizeSection.vue";
 import SheetLayoutSection from "./SheetLayoutSection.vue";
 import ActionButtons from "./ActionButtons.vue";
 import AppFooter from "./AppFooter.vue";
+import MenuIcon from "./icons/MenuIcon.vue";
+import CloseIcon from "./icons/CloseIcon.vue";
 import { useIsMobile } from "../composables/useIsMobile";
 
 const isMobile = useIsMobile();
@@ -35,17 +37,7 @@ function closeMenu() {
         :title="$t('toolbar.settings')"
         @click="toggleMenu"
       >
-        <svg
-          viewBox="0 0 20 20"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.4"
-          stroke-linecap="round"
-        >
-          <line x1="3" y1="5" x2="17" y2="5" />
-          <line x1="3" y1="10" x2="17" y2="10" />
-          <line x1="3" y1="15" x2="17" y2="15" />
-        </svg>
+        <MenuIcon />
       </button>
       <AppHeader />
       <ActionButtons v-if="isMobile" compact />
@@ -72,14 +64,7 @@ function closeMenu() {
                 :aria-label="$t('toolbar.close')"
                 @click="closeMenu"
               >
-                <svg viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M4 4l8 8m0-8l-8 8"
-                    stroke="currentColor"
-                    stroke-width="1.6"
-                    stroke-linecap="round"
-                  />
-                </svg>
+                <CloseIcon />
               </button>
             </div>
             <div class="drawer-body">
