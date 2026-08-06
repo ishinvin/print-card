@@ -1,7 +1,11 @@
 # Print Card A4
 
+[![Deploy to GitHub Pages](https://github.com/ishinvin/print-card/actions/workflows/deploy.yml/badge.svg)](https://github.com/ishinvin/print-card/actions/workflows/deploy.yml)
+
 A small browser tool for laying out a front/back card pair (ID card size by
 default) on an A4 sheet, ready to print or export as an image.
+
+Live at <https://ishinvin.github.io/print-card/>.
 
 ## Features
 
