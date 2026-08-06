@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import BaseButton from "./BaseButton.vue";
 
 const props = defineProps({
@@ -67,6 +67,12 @@ function syncPointsFromCrop() {
     { x: x + w, y: y + h },
   ];
 }
+
+// SVG walk order for the quad outline/handles: tl -> tr -> br -> bl.
+const quadCorners = computed(() => {
+  const [tl, tr, bl, br] = cornerPoints.value;
+  return [tl, tr, br, bl];
+});
 
 function syncCropFromPoints() {
   const xs = cornerPoints.value.map((p) => p.x);
@@ -287,10 +293,10 @@ function cancel() {
           </button>
         </div>
       </div>
-      <p v-if="mode === 'rect'" class="hint">
+      <p v-if="mode === 'rect'" class="hint" :style="{ maxWidth: (displayW || 320) + 'px' }">
         {{ $t("crop.rectHint") }}
       </p>
-      <p v-else class="hint">
+      <p v-else class="hint" :style="{ maxWidth: (displayW || 320) + 'px' }">
         {{ $t("crop.perspectiveHint") }}
       </p>
 
@@ -333,15 +339,15 @@ function cancel() {
           <svg class="quad-overlay" :width="displayW" :height="displayH">
             <path
               :d="`M0,0 H${displayW} V${displayH} H0 Z
-                   M${cornerPoints[0].x},${cornerPoints[0].y}
-                   L${cornerPoints[1].x},${cornerPoints[1].y}
-                   L${cornerPoints[3].x},${cornerPoints[3].y}
-                   L${cornerPoints[2].x},${cornerPoints[2].y} Z`"
+                   M${quadCorners[0].x},${quadCorners[0].y}
+                   L${quadCorners[1].x},${quadCorners[1].y}
+                   L${quadCorners[2].x},${quadCorners[2].y}
+                   L${quadCorners[3].x},${quadCorners[3].y} Z`"
               fill="rgba(0,0,0,0.55)"
               fill-rule="evenodd"
             />
             <polygon
-              :points="`${cornerPoints[0].x},${cornerPoints[0].y} ${cornerPoints[1].x},${cornerPoints[1].y} ${cornerPoints[3].x},${cornerPoints[3].y} ${cornerPoints[2].x},${cornerPoints[2].y}`"
+              :points="quadCorners.map((p) => `${p.x},${p.y}`).join(' ')"
               fill="none"
               stroke="#fff"
               stroke-width="1"
@@ -426,8 +432,11 @@ function cancel() {
 .hint {
   margin: 0;
   font-size: 12px;
+  line-height: 1.4;
+  min-height: 2.8em;
   color: #6b7280;
   align-self: flex-start;
+  overflow-wrap: break-word;
 }
 
 .stage {
