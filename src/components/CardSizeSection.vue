@@ -6,20 +6,20 @@ const settings = inject("cardSettings");
 
 <template>
   <section class="group">
-    <h2>Card size (mm)</h2>
+    <h2>{{ $t("cardSize.heading") }}</h2>
     <div class="field-row">
       <label>
-        Width
+        {{ $t("cardSize.width") }}
         <input type="number" step="0.1" min="10" v-model.number="settings.cardWidthMm" />
       </label>
       <label>
-        Height
+        {{ $t("cardSize.height") }}
         <input type="number" step="0.1" min="10" v-model.number="settings.cardHeightMm" />
       </label>
     </div>
     <div class="field-row">
       <label>
-        Corner Radius
+        {{ $t("cardSize.cornerRadius") }}
         <input type="number" step="0.1" min="0" v-model.number="settings.radiusMm" />
       </label>
     </div>

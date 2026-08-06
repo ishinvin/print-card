@@ -27,7 +27,13 @@ function resetAll() {
 
 <template>
   <div v-if="compact" class="action-icons">
-    <button type="button" class="icon-btn" title="Print" aria-label="Print" @click="doPrint">
+    <button
+      type="button"
+      class="icon-btn"
+      :title="$t('actions.print')"
+      :aria-label="$t('actions.print')"
+      @click="doPrint"
+    >
       <svg viewBox="0 0 16 16" fill="none">
         <path
           d="M5 5.5V2.5h6v3"
@@ -60,8 +66,8 @@ function resetAll() {
     <button
       type="button"
       class="icon-btn"
-      title="Save image"
-      aria-label="Save image"
+      :title="$t('actions.saveImage')"
+      :aria-label="$t('actions.saveImage')"
       :disabled="generating"
       @click="openPreview"
     >
@@ -76,7 +82,13 @@ function resetAll() {
       </svg>
     </button>
 
-    <button type="button" class="icon-btn" title="Reset" aria-label="Reset" @click="resetAll">
+    <button
+      type="button"
+      class="icon-btn"
+      :title="$t('actions.reset')"
+      :aria-label="$t('actions.reset')"
+      @click="resetAll"
+    >
       <svg viewBox="0 0 16 16" fill="none">
         <path
           d="M13.5 8a5.5 5.5 0 1 1-1.6-3.89M13.5 2v3.5H10"
@@ -118,7 +130,7 @@ function resetAll() {
           stroke-linejoin="round"
         />
       </svg>
-      <span>Print</span>
+      <span>{{ $t("actions.print") }}</span>
     </BaseButton>
 
     <BaseButton :disabled="generating" @click="openPreview">
@@ -131,7 +143,7 @@ function resetAll() {
           stroke-linejoin="round"
         />
       </svg>
-      <span>{{ generating ? "Preparing…" : "Save" }}</span>
+      <span>{{ generating ? $t("actions.preparing") : $t("actions.save") }}</span>
     </BaseButton>
 
     <BaseButton @click="resetAll">
@@ -144,7 +156,7 @@ function resetAll() {
           stroke-linejoin="round"
         />
       </svg>
-      <span>Reset</span>
+      <span>{{ $t("actions.reset") }}</span>
     </BaseButton>
   </div>
 

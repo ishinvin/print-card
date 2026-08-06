@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h1>Print Card A4</h1>
-    <p class="sub">Tap a card to browse for an image.</p>
+    <h1>{{ $t("app.title") }}</h1>
+    <p class="sub">{{ $t("app.subtitle") }}</p>
   </div>
 </template>
 

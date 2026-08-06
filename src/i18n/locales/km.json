@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Print Card A4",
+    "subtitle": "ចុចលើកាតដើម្បីជ្រើសរើសរូបភាព"
+  },
+  "layout": {
+    "heading": "ប្លង់",
+    "arrangement": "ការរៀបចំ",
+    "row": "ជួរដេក",
+    "column": "ជួរឈរ",
+    "alignment": "ការតម្រឹម",
+    "top": "កំពូល",
+    "center": "កណ្តាល",
+    "bottom": "បាត"
+  },
+  "cardSize": {
+    "heading": "ទំហំកាត (មម)",
+    "width": "ទទឹង",
+    "height": "កម្ពស់",
+    "cornerRadius": "កាំជ្រុង"
+  },
+  "sheetLayout": {
+    "heading": "ប្លង់សន្លឹក",
+    "margin": "គែម",
+    "cardGap": "គម្លាតកាត",
+    "showMarks": "បង្ហាញសញ្ញាកាត់"
+  },
+  "actions": {
+    "print": "បោះពុម្ព",
+    "save": "រក្សាទុក",
+    "saveImage": "រក្សាទុករូបភាព",
+    "preparing": "រៀបចំ…",
+    "reset": "ត្រឡប់"
+  },
+  "card": {
+    "front": "ផ្ទៃខាងមុខ",
+    "back": "ផ្ទៃខាងក្រោយ",
+    "tapToBrowse": "ចុចដើម្បីជ្រើសរើស",
+    "dropToReplace": "ទម្លាក់ដើម្បីជំនួស",
+    "dropImageHere": "ទម្លាក់រូបភាពនៅទីនេះ",
+    "clear": "សម្អាត"
+  },
+  "crop": {
+    "title": "កាត់រូបភាព",
+    "rectangle": "ចតុកោណ",
+    "straighten": "ធ្វើឲ្យត្រង់",
+    "rectHint": "អូសប្រអប់ ឬជ្រុងរបស់វា ដើម្បីជ្រើសរើសផ្នែកដែលត្រូវរក្សា។",
+    "perspectiveHint": "អូសជ្រុងនីមួយៗទៅលើជ្រុងពិតរបស់កាត ដើម្បីធ្វើឲ្យរូបភាពត្រង់។",
+    "cancel": "បោះបង់",
+    "apply": "អនុវត្ត"
+  },
+  "savePreview": {
+    "title": "រក្សាទុកជារូបភាព",
+    "alt": "ការមើលជាមុននៃទំព័រ A4",
+    "cancel": "បោះបង់",
+    "save": "រក្សាទុក"
+  },
+  "toolbar": {
+    "settings": "ការកំណត់",
+    "close": "បិទ"
+  },
+  "preview": {
+    "zoomOut": "បង្រួញ",
+    "zoomIn": "ពង្រីក",
+    "resetZoom": "កំណត់ឲ្យសមទំហំវិញ"
+  },
+  "footer": {
+    "developedBy": "អភិវឌ្ឍន៍ដោយ",
+    "sponsor": "Sponsor"
+  }
+}

@@ -12,13 +12,13 @@ const emit = defineEmits(["confirm", "cancel"]);
     <Transition name="modal-fade" appear>
       <div class="overlay" @click.self="emit('cancel')">
         <div class="modal">
-          <p class="title">Save as Image</p>
+          <p class="title">{{ $t("savePreview.title") }}</p>
           <div class="page-frame">
-            <img :src="src" alt="A4 page preview" />
+            <img :src="src" :alt="$t('savePreview.alt')" />
           </div>
           <div class="actions">
-            <BaseButton @click="emit('cancel')">Cancel</BaseButton>
-            <BaseButton @click="emit('confirm')">Save</BaseButton>
+            <BaseButton @click="emit('cancel')">{{ $t("savePreview.cancel") }}</BaseButton>
+            <BaseButton @click="emit('confirm')">{{ $t("savePreview.save") }}</BaseButton>
           </div>
         </div>
       </div>

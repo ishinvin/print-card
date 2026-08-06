@@ -31,8 +31,8 @@ function closeMenu() {
         v-if="isMobile"
         type="button"
         class="menu-trigger"
-        aria-label="Settings"
-        title="Settings"
+        :aria-label="$t('toolbar.settings')"
+        :title="$t('toolbar.settings')"
         @click="toggleMenu"
       >
         <svg
@@ -65,8 +65,13 @@ function closeMenu() {
         <div v-if="menuOpen" class="drawer-overlay no-print" @click.self="closeMenu">
           <div class="drawer">
             <div class="drawer-header">
-              <p class="drawer-title">Settings</p>
-              <button type="button" class="drawer-close" aria-label="Close" @click="closeMenu">
+              <p class="drawer-title">{{ $t("toolbar.settings") }}</p>
+              <button
+                type="button"
+                class="drawer-close"
+                :aria-label="$t('toolbar.close')"
+                @click="closeMenu"
+              >
                 <svg viewBox="0 0 16 16" fill="none">
                   <path
                     d="M4 4l8 8m0-8l-8 8"

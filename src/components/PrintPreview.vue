@@ -99,7 +99,7 @@ const scaledHeight = computed(() => Math.round(PAGE_H_PX * scale.value));
             :height-mm="settings.cardHeightMm"
             :radius-mm="settings.radiusMm"
             :crop-marks="settings.cropMarks"
-            label="front"
+            :label="$t('card.front')"
             @select-file="images.onSelectFile('front', $event)"
           />
           <CardSlot
@@ -108,7 +108,7 @@ const scaledHeight = computed(() => Math.round(PAGE_H_PX * scale.value));
             :height-mm="settings.cardHeightMm"
             :radius-mm="settings.radiusMm"
             :crop-marks="settings.cropMarks"
-            label="back"
+            :label="$t('card.back')"
             @select-file="images.onSelectFile('back', $event)"
           />
         </div>
@@ -116,13 +116,25 @@ const scaledHeight = computed(() => Math.round(PAGE_H_PX * scale.value));
     </div>
 
     <div class="zoom-controls no-print">
-      <button type="button" :disabled="scale <= MIN_ZOOM" title="Zoom out" @click="zoomOut">
+      <button
+        type="button"
+        :disabled="scale <= MIN_ZOOM"
+        :title="$t('preview.zoomOut')"
+        @click="zoomOut"
+      >
         −
       </button>
-      <button type="button" class="zoom-level" title="Reset to fit" @click="resetZoom">
+      <button type="button" class="zoom-level" :title="$t('preview.resetZoom')" @click="resetZoom">
         {{ Math.round(scale * 100) }}%
       </button>
-      <button type="button" :disabled="scale >= MAX_ZOOM" title="Zoom in" @click="zoomIn">+</button>
+      <button
+        type="button"
+        :disabled="scale >= MAX_ZOOM"
+        :title="$t('preview.zoomIn')"
+        @click="zoomIn"
+      >
+        +
+      </button>
     </div>
   </main>
 </template>

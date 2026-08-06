@@ -69,14 +69,20 @@ function clear(e) {
       <img v-if="src" :src="src" />
       <div v-else class="placeholder">
         <span>{{ label }}</span>
-        <span class="dz-hint">Tap to browse</span>
+        <span class="dz-hint">{{ $t("card.tapToBrowse") }}</span>
       </div>
 
       <div v-if="dragging" class="drop-overlay">
-        <span>{{ src ? "Drop to replace" : "Drop image here" }}</span>
+        <span>{{ src ? $t("card.dropToReplace") : $t("card.dropImageHere") }}</span>
       </div>
 
-      <button v-if="src" type="button" class="clear-btn no-print" title="Clear" @click="clear">
+      <button
+        v-if="src"
+        type="button"
+        class="clear-btn no-print"
+        :title="$t('card.clear')"
+        @click="clear"
+      >
         <svg viewBox="0 0 16 16" fill="none">
           <path
             d="M4 4l8 8m0-8l-8 8"

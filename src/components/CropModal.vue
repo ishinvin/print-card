@@ -273,25 +273,25 @@ function cancel() {
   <div class="overlay" @click.self="cancel">
     <div class="modal">
       <div class="header-row">
-        <p class="title">Crop Image</p>
+        <p class="title">{{ $t("crop.title") }}</p>
         <div class="mode-toggle">
           <button type="button" :class="{ active: mode === 'rect' }" @click="setMode('rect')">
-            Rectangle
+            {{ $t("crop.rectangle") }}
           </button>
           <button
             type="button"
             :class="{ active: mode === 'perspective' }"
             @click="setMode('perspective')"
           >
-            Straighten
+            {{ $t("crop.straighten") }}
           </button>
         </div>
       </div>
       <p v-if="mode === 'rect'" class="hint">
-        Drag the box or its corners to select the region to keep.
+        {{ $t("crop.rectHint") }}
       </p>
       <p v-else class="hint">
-        Drag each corner onto the card's actual corner to straighten a perspective photo.
+        {{ $t("crop.perspectiveHint") }}
       </p>
 
       <div class="stage" :style="{ width: displayW + 'px', height: displayH + 'px' }">
@@ -358,8 +358,8 @@ function cancel() {
       </div>
 
       <div class="actions">
-        <BaseButton @click="cancel">Cancel</BaseButton>
-        <BaseButton @click="applyCrop">Apply</BaseButton>
+        <BaseButton @click="cancel">{{ $t("crop.cancel") }}</BaseButton>
+        <BaseButton @click="applyCrop">{{ $t("crop.apply") }}</BaseButton>
       </div>
     </div>
   </div>

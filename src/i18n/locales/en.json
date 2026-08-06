@@ -1,0 +1,71 @@
+{
+  "app": {
+    "title": "Print Card A4",
+    "subtitle": "Tap a card to browse for an image."
+  },
+  "layout": {
+    "heading": "Layout",
+    "arrangement": "Arrangement",
+    "row": "Row",
+    "column": "Column",
+    "alignment": "Alignment",
+    "top": "Top",
+    "center": "Center",
+    "bottom": "Bottom"
+  },
+  "cardSize": {
+    "heading": "Card size (mm)",
+    "width": "Width",
+    "height": "Height",
+    "cornerRadius": "Corner Radius"
+  },
+  "sheetLayout": {
+    "heading": "Sheet layout",
+    "margin": "Margin",
+    "cardGap": "Card Gap",
+    "showMarks": "Show Marks"
+  },
+  "actions": {
+    "print": "Print",
+    "save": "Save",
+    "saveImage": "Save image",
+    "preparing": "Preparing…",
+    "reset": "Reset"
+  },
+  "card": {
+    "front": "Front",
+    "back": "Back",
+    "tapToBrowse": "Tap to browse",
+    "dropToReplace": "Drop to replace",
+    "dropImageHere": "Drop image here",
+    "clear": "Clear"
+  },
+  "crop": {
+    "title": "Crop Image",
+    "rectangle": "Rectangle",
+    "straighten": "Straighten",
+    "rectHint": "Drag the box or its corners to select the region to keep.",
+    "perspectiveHint": "Drag each corner onto the card's actual corner to straighten a perspective photo.",
+    "cancel": "Cancel",
+    "apply": "Apply"
+  },
+  "savePreview": {
+    "title": "Save as Image",
+    "alt": "A4 page preview",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "toolbar": {
+    "settings": "Settings",
+    "close": "Close"
+  },
+  "preview": {
+    "zoomOut": "Zoom out",
+    "zoomIn": "Zoom in",
+    "resetZoom": "Reset to fit"
+  },
+  "footer": {
+    "developedBy": "Developed by",
+    "sponsor": "Sponsor"
+  }
+}
