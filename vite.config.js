@@ -4,6 +4,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/print-card/",
   server: {
     host: true,
   },
@@ -16,7 +17,8 @@ export default defineConfig({
         name: "Print Card A4",
         short_name: "Print Card A4",
         description: "Arrange front/back card images on an A4 sheet for printing.",
-        start_url: "/",
+        start_url: "/print-card/",
+        scope: "/print-card/",
         display: "standalone",
         background_color: "#eceef2",
         theme_color: "#126421",
