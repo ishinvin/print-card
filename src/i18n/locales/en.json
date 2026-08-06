@@ -66,6 +66,7 @@
   },
   "footer": {
     "developedBy": "Developed by",
-    "sponsor": "Sponsor"
+    "sponsor": "Sponsor",
+    "github": "GitHub"
   }
 }

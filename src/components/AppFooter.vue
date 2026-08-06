@@ -1,6 +1,7 @@
 <script setup>
 import LanguageSwitch from "./LanguageSwitch.vue";
 import HeartIcon from "./icons/HeartIcon.vue";
+import GitHubIcon from "./icons/GitHubIcon.vue";
 </script>
 
 <template>
@@ -10,15 +11,26 @@ import HeartIcon from "./icons/HeartIcon.vue";
       {{ $t("footer.developedBy") }}
       <a href="https://github.com/ishinvin" target="_blank" rel="noopener noreferrer">Ishin Vin</a>
     </p>
-    <a
-      class="sponsor-btn"
-      href="https://github.com/sponsors/ishinvin"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <HeartIcon />
-      {{ $t("footer.sponsor") }}
-    </a>
+    <div class="footer-links">
+      <a
+        class="sponsor-btn"
+        href="https://github.com/sponsors/ishinvin"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <HeartIcon />
+        {{ $t("footer.sponsor") }}
+      </a>
+      <a
+        class="sponsor-btn"
+        href="https://github.com/ishinvin/print-card"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GitHubIcon />
+        {{ $t("footer.github") }}
+      </a>
+    </div>
   </footer>
 </template>
 
@@ -30,6 +42,11 @@ import HeartIcon from "./icons/HeartIcon.vue";
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 8px;
+}
+
+.footer-links {
+  display: flex;
   gap: 8px;
 }
 
